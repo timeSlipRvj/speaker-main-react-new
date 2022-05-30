@@ -61,7 +61,7 @@ export default function Addeventpage() {
       categories: ["et", "minus", "dolorum", "ipsa"],
     };
     axios
-      .post("https://localhost:3001/api/events", data, {
+      .post("https://server-app-sound.herokuapp.com/api/events", data, {
         headers: {
           Authorization: `Bearer ${
             JSON.parse(localStorage.getItem("@token")).token

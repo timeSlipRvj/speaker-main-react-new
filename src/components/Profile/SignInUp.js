@@ -21,12 +21,14 @@ const SignInUp = () => {
 
     console.log(response.profileObj.name);
     axios
-      .post(`https://localhost:3001/api/auth/login`, {
+      .post(`https://server-app-sound.herokuapp.com/api/auth/login`, {
         name: response.profileObj.name,
-        phone: null,
+        phone: "",
         email: response.profileObj.email,
         provider: "GOOGLE",
         isSubscribed: false,
+        age: "",
+        occupation: "",
       })
       .then((data) => {
         console.log("Success", data?.data);
@@ -55,7 +57,7 @@ const SignInUp = () => {
     e.preventDefault();
     if (provide) {
       axios
-        .post(`https://localhost:3001/api/auth/login`, {
+        .post(`https://server-app-sound.herokuapp.com/api/auth/login`, {
           name: name,
           phone: phone,
           email: email,

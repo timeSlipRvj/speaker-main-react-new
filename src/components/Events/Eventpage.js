@@ -65,7 +65,7 @@ const Eventpage = () => {
   console.log(userToken, "startTime");
   const userEvents = () => {
     axios
-      .get(`https://localhost:3001/api/events/all`, {
+      .get(`https://server-app-sound.herokuapp.com/api/events/all`, {
         headers: {
           Authorization: `Bearer ${userToken?.token}`,
         },
@@ -82,7 +82,7 @@ const Eventpage = () => {
   console.log(resultProductData);
   useEffect(() => {
     axios
-      .get(`https://localhost:3001/api/events`, {
+      .get(`https://server-app-sound.herokuapp.com/api/events`, {
         headers: {
           Authorization: `Bearer ${userToken?.token}`,
         },
@@ -104,11 +104,15 @@ const Eventpage = () => {
     const data = {};
     console.log(id);
     axios
-      .post(`https://localhost:3001/api/events/bookmark/${id}`, data, {
-        headers: {
-          Authorization: `Bearer ${userToken?.token}`,
-        },
-      })
+      .post(
+        `https://server-app-sound.herokuapp.com/api/events/bookmark/${id}`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${userToken?.token}`,
+          },
+        }
+      )
       .then((d) => {
         toast.dark("Event bookmarked successfully");
       })

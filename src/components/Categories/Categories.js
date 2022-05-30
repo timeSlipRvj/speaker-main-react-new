@@ -6,7 +6,7 @@ export default function Categories() {
   const [categoryData, setCategoryData] = useState("");
   useEffect(() => {
     axios
-      .get(`https://localhost:3001/api/events/category`)
+      .get(`https://server-app-sound.herokuapp.com/api/events/category`)
       .then((data) => {
         setCategoryData(data?.data);
       })
